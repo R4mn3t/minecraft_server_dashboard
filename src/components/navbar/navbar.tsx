@@ -1,18 +1,24 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './navbar.css'
 import {Link, Outlet} from "react-router-dom";
-import Shortcuts from "../shortcuts/shortcuts";
-import Commands from "../commands/commands";
 
 export interface NavbarProps {
 
 }
 
 export default function Navbar(props: NavbarProps) {
-    const [activeTab, setActiveTab] = useState("home");
+    const [activeTab, setActiveTab] = useState('home');
     const handleClick = (tab: string) => {
         setActiveTab(tab);
+        localStorage.setItem('activeTab', tab);
     }
+
+    useEffect(() => {
+        const storedTab = localStorage.getItem('activeTab');
+        if (storedTab) {
+            setActiveTab(storedTab);
+        }
+    }, []);
 
     return (
         <>
