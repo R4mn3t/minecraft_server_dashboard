@@ -1,7 +1,10 @@
 import React from 'react';
-import {TableDataProps} from "./tableDataProps";
 
-export default function TableHead({columnHeadings}: TableDataProps) {
+interface TableHeadProps {
+    columnHeadings: string[];
+}
+
+export default function TableHead({columnHeadings}: TableHeadProps) {
     return (
         <thead>
         <tr>
