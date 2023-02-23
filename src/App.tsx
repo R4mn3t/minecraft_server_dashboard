@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './components/UI/main.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./components/home/home";
 import Shortcuts from "./components/shortcuts/shortcuts";
