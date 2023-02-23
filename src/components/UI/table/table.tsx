@@ -1,14 +1,19 @@
 import React from 'react';
 import TableHead from "./tableHead";
-import TableRows from "./tableRows";
-import {TableDataProps} from "./tableDataProps";
+import TableData from "./tableData";
 
-export default function Table(props: TableDataProps) {
+export interface TableProps {
+    columnHeadings: string[]; // Spaltenüberschriften
+    data: any[][]; // Tabellendaten
+    caption?: string; // Tabbelenbeschriftung
+}
+
+export default function Table(props: TableProps) {
     return (
         <table>
             {props.caption && <caption>{props.caption}</caption>}
-            <TableHead columnHeadings={} rows={}/>
-            <TableRows columnHeadings={} rows={}/>
+            <TableHead columnHeadings={props.columnHeadings}/>
+            <TableData data={props.data}/>
         </table>
     );
 }
