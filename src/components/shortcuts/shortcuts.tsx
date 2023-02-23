@@ -2,10 +2,6 @@ import React from 'react';
 import './shortcuts.css'
 import Table from "../UI/table/table";
 
-//export interface ShortcutsProps {
-//    title: string;
-//}
-
 export default function Shortcuts() {
     const headings = ['Name', 'Vorname', 'E-Mail'];
 
