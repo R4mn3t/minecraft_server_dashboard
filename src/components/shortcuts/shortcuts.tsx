@@ -12,6 +12,7 @@ export default function Shortcuts() {
     const data = [
         ['Pipi', 'Langstrumpf', 'test@example.com'],
         ['Marten', 'Knystock', 'knystockmarten@gmail.com'],
+        ['Dome', 'Zilke', 'bla'],
     ];
 
     return (
