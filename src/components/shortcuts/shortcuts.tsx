@@ -1,13 +1,16 @@
 import React from 'react';
+import './shortcuts.css'
 
-// export interface ShortcutsProps {
-//
-// }
+//export interface ShortcutsProps {
+//    title: string;
+//}
 
 export default function Shortcuts() {
     return (
         <>
-            <h1>Shortcuts</h1>
+            <h1> TITLE</h1>
+            <h2> text </h2>
+
         </>
     );
 }
