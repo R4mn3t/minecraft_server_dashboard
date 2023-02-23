@@ -10,6 +10,7 @@ export default function Shortcuts() {
         <>
             <h1> TITLE</h1>
             <h2> text </h2>
+
         </>
     );
 }
