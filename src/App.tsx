@@ -1,11 +1,10 @@
 import React from 'react';
 import './App.css';
-import './components/UI/main.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Home from "./components/home/home";
-import Shortcuts from "./components/shortcuts/shortcuts";
-import Commands from "./components/commands/commands";
-import Navbar from "./components/navbar/navbar";
+import Navbar from "./Components/Navbar/navbar";
+import Home from "./Components/Navbar/Home/home";
+import Shortcuts from "./Components/Navbar/Shortcuts/shortcuts";
+import Commands from "./Components/Navbar/Commands/commands";
 
 function App() {
     return (

@@ -3,7 +3,7 @@ import './navbar.css'
 import {NavLink, Outlet, useLocation} from "react-router-dom";
 
 export default function Navbar() {
-    const [activeTab, setActiveTab] = useState('home');
+    const [activeTab, setActiveTab] = useState('Home');
     const location = useLocation();
 
     const handleClick = (tab: string) => {
@@ -28,15 +28,15 @@ export default function Navbar() {
             <nav>
                 <ul>
                     <li
-                        id={'home'}
-                        className={activeTab === 'home' ? 'active' : ''}
-                        onClick={() => handleClick('home')}>
+                        id={'Home'}
+                        className={activeTab === 'Home' ? 'active' : ''}
+                        onClick={() => handleClick('Home')}>
                         <NavLink to="/">Home</NavLink>
                     </li>
                     <li
-                        id={'shortcuts'}
-                        className={activeTab === 'shortcuts' ? 'active' : ''}
-                        onClick={() => handleClick('shortcuts')}>
+                        id={'Shortcuts'}
+                        className={activeTab === 'Shortcuts' ? 'active' : ''}
+                        onClick={() => handleClick('Shortcuts')}>
                         <NavLink to="/shortcuts">Shortcuts</NavLink>
                     </li>
                     <li

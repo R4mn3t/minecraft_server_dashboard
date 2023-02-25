@@ -1,6 +1,6 @@
 import React from 'react';
 import './shortcuts.css'
-import Table from "../UI/table/table";
+import Table from "../../UI/Table/table";
 
 export default function Shortcuts() {
     const headings = ['Name', 'Vorname', 'E-Mail'];
@@ -13,7 +13,9 @@ export default function Shortcuts() {
 
     return (
         <>
-            <Table columnHeadings={headings} data={data}/>
+            <div className={'table-container'}>
+                <Table columnHeadings={headings} data={data}/>
+            </div>
         </>
     );
 }
