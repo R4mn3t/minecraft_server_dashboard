@@ -16,18 +16,6 @@ li {
     position: relative;
 }
 
-/*Tab-Separator*/
-li:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 1px;
-    height: 80%;
-    background-color: #AAAAAA;
-}
-
 li a {
     display: block;
     color: var(--headings);
@@ -41,6 +29,27 @@ li a:hover:not(.active) {
     background-color: #36454F;
 }
 
+div#darkMode {
+    margin-left: auto;
+}
+
+/*Tab-Separator*/
+li:not(:nth-last-child(2))::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 80%;
+    background-color: #AAAAAA;
+}
+
 .active {
     background-color: #00AA00;
+}
+
+#darkMode {
+    align-self: center;
+    padding: 0 14px;
 }

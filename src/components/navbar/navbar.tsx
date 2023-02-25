@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './navbar.css'
 import {NavLink, Outlet, useLocation} from "react-router-dom";
+import DarkMode from "../UI/DarkMode/darkMode";
 
 export default function Navbar() {
     const [activeTab, setActiveTab] = useState('Home');
@@ -28,15 +29,15 @@ export default function Navbar() {
             <nav>
                 <ul>
                     <li
-                        id={'Home'}
-                        className={activeTab === 'Home' ? 'active' : ''}
-                        onClick={() => handleClick('Home')}>
+                        id={'home'}
+                        className={activeTab === 'home' ? 'active' : ''}
+                        onClick={() => handleClick('home')}>
                         <NavLink to="/">Home</NavLink>
                     </li>
                     <li
-                        id={'Shortcuts'}
-                        className={activeTab === 'Shortcuts' ? 'active' : ''}
-                        onClick={() => handleClick('Shortcuts')}>
+                        id={'shortcuts'}
+                        className={activeTab === 'shortcuts' ? 'active' : ''}
+                        onClick={() => handleClick('shortcuts')}>
                         <NavLink to="/shortcuts">Shortcuts</NavLink>
                     </li>
                     <li
@@ -45,6 +46,9 @@ export default function Navbar() {
                         onClick={() => handleClick('commands')}>
                         <NavLink to="/commands">Commands</NavLink>
                     </li>
+                    <div id={'darkMode'}>
+                        <DarkMode/>
+                    </div>
                 </ul>
             </nav>
 
