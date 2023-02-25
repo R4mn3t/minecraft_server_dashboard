@@ -1,10 +1,31 @@
-#PageName {
-    text-align: center;
-    font-size: 3rem;
+:root {
+    --body-background: #121516;
+    --headings: #d7d9d9;
 }
 
-#Category {
-    text-align: center;
+.pageName {
+    color: var(--headings);
+    font-size: 3rem;
+    align-self: center;
+}
+
+.category {
+    color: var(--headings);
+    align-self: center;
+}
+
+.item {
+    align-self: center;
+}
+
+/*Container*/
+
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: var(--body-background);
+    height: calc(100vh - 3rem);
 }
 
 .table-container {

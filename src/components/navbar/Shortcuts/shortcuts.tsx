@@ -1,5 +1,6 @@
 import React from 'react';
-import './shortcuts.css'
+import './shortcuts.css';
+import '../../UI/main.css';
 import Table from "../../UI/Table/table";
 
 export default function Shortcuts() {
@@ -12,10 +13,14 @@ export default function Shortcuts() {
     ];
 
     return (
-        <>
+        <div className={'body'}>
+            <h1 className={'pageName'}>Minecraft Shortcuts</h1>
+
             <div className={'table-container'}>
-                <Table columnHeadings={headings} data={data}/>
+                <Table
+                    columnHeadings={headings}
+                    data={data}/>
             </div>
-        </>
+        </div>
     );
 }
