@@ -12,13 +12,13 @@ import './commands.css'
 
 export default function Commands() {
     return (
-        <>
-            <h1 id={'PageName'}>Minecraft Commands</h1>
-            <h1 id={'Category'}>Commands</h1>
+        <div className={'body'}>
+            <h1 className={'pageName'}>Minecraft Commands</h1>
+            <h1 className={'category'}>Commands</h1>
             <br/>
-            <h1 id={'Category'}>Target Selector</h1>
+            <h1 className={'category'}>Target Selector</h1>
             <br/>
 
-        </>
+        </div>
     );
 }

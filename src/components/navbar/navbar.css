@@ -1,27 +1,71 @@
+nav {
+    display: flex;
+    height: var(--navbar-height);
+    background-color: #000000;
+}
+
 ul {
-    list-style-type: none;
+    display: flex;
+    list-style: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #000000;
 }
 
 li {
-    float: left;
+    font-weight: bold;
+    position: relative;
 }
 
 li a {
     display: block;
-    color: white;
+    color: #d7d9d9;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    cursor: pointer;
 }
 
 li a:hover:not(.active) {
-    background-color: #111;
+    background-color: #36454F;
+}
+
+/*Tab-Separator*/
+li:not(:nth-last-child(1))::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 80%;
+    background-color: #AAAAAA;
 }
 
 .active {
     background-color: #00AA00;
+}
+
+.navContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: 0.5rem;
+}
+
+#language {
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#darkMode {
+    padding: 0 7px;
+    cursor: pointer;
 }
