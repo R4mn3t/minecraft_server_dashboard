@@ -2,8 +2,16 @@ import React, {useEffect, useState} from 'react';
 import './navbar.css'
 import {NavLink, Outlet, useLocation} from "react-router-dom";
 import DarkMode from "../UI/DarkMode/darkMode";
+import LanguageSelector from "../UI/LanguageSelector/language-selector";
 
-export default function Navbar() {
+interface NavBarProps {
+    onDarkModeToggle: (isDarkMode: boolean) => void;
+    onLanguageToggle: (isEnglish: boolean) => void;
+    isDarkMode: boolean;
+    isEnglish: boolean;
+}
+
+export default function Navbar(props: NavBarProps) {
     const [activeTab, setActiveTab] = useState('Home');
     const location = useLocation();
 
@@ -23,6 +31,16 @@ export default function Navbar() {
         const currentTab = location.pathname.split('/')[1] || '';
         setActiveTab(currentTab);
     }, [location.pathname]);
+
+    const {onDarkModeToggle, onLanguageToggle, isDarkMode, isEnglish} = props;
+
+    const handleDarkModeToggle = (isDarkMode: boolean) => {
+        onDarkModeToggle(isDarkMode);
+    };
+
+    const handleLanguageToggle = (isEnglish: boolean) => {
+        onLanguageToggle(isEnglish);
+    };
 
     return (
         <>
@@ -46,10 +64,19 @@ export default function Navbar() {
                         onClick={() => handleClick('commands')}>
                         <NavLink to="/commands">Commands</NavLink>
                     </li>
-                    <div id={'darkMode'}>
-                        <DarkMode/>
-                    </div>
                 </ul>
+                <div className={'navContainer'}>
+                    <div id={'darkMode'}>
+                        <DarkMode
+                            onToggle={handleDarkModeToggle}
+                            isDarkMode={isDarkMode}/>
+                    </div>
+                    <div id={'language'}>
+                        <LanguageSelector
+                            onToggle={handleLanguageToggle}
+                            isEnglish={isEnglish}/>
+                    </div>
+                </div>
             </nav>
 
             <Outlet/>

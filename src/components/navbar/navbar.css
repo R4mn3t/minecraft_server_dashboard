@@ -1,5 +1,7 @@
 nav {
-    height: 3rem;
+    display: flex;
+    height: var(--navbar-height);
+    background-color: #000000;
 }
 
 ul {
@@ -18,7 +20,7 @@ li {
 
 li a {
     display: block;
-    color: var(--headings);
+    color: #d7d9d9;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -29,12 +31,8 @@ li a:hover:not(.active) {
     background-color: #36454F;
 }
 
-div#darkMode {
-    margin-left: auto;
-}
-
 /*Tab-Separator*/
-li:not(:nth-last-child(2))::after {
+li:not(:nth-last-child(1))::after {
     content: "";
     position: absolute;
     right: 0;
@@ -49,7 +47,25 @@ li:not(:nth-last-child(2))::after {
     background-color: #00AA00;
 }
 
+.navContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: 0.5rem;
+}
+
+#language {
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #darkMode {
-    align-self: center;
-    padding: 0 14px;
+    padding: 0 7px;
+    cursor: pointer;
 }
