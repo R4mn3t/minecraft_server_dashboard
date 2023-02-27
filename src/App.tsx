@@ -59,7 +59,7 @@ function App() {
 
 export default App;
 
-export interface UserSettings {
+export type UserSettings = {
     darkModeEnabled: boolean;
     language: string;
 }
