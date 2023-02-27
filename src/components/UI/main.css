@@ -1,18 +1,50 @@
-#PageName {
-    text-align: center;
+:root {
+    --body-background: white;
+    --headings: black;
+    --navbar-height: 3rem;
+}
+
+[data-theme="dark"] {
+    --body-background: #121516;
+    --headings: #d7d9d9;
+}
+
+/*html, body {*/
+/*    height: 100%;*/
+/*    margin: 0;*/
+/*}*/
+
+.pageName {
+    color: var(--headings);
     font-size: 3rem;
+    align-self: center;
 }
 
-#Category {
-    text-align: center;
+.category {
+    color: var(--headings);
+    align-self: center;
 }
 
-#Second-Category {
-    text-align: center;
-    font-size: 1rem;
+.item {
+    align-self: center;
 }
 
-table, th, td {
-    border: 1px solid black;
-    white-space: pre;
+/*Container*/
+
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: var(--body-background);
+    height: calc(100vh - var(--navbar-height));
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

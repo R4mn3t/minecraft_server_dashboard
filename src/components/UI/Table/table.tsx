@@ -1,11 +1,12 @@
 import React from 'react';
+import './table.css'
 import TableHead from "./tableHead";
 import TableData from "./tableData";
 
 export interface TableProps {
     columnHeadings: string[]; // Spaltenüberschriften
     data: any[][]; // Tabellendaten
-    caption?: string; // Tabbelenbeschriftung
+    caption?: string; // Tabellenbeschriftung
 }
 
 export default function Table(props: TableProps) {
