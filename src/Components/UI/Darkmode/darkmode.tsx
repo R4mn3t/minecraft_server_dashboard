@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {ReactComponent as SunIcon} from '../Icons/sun.svg';
 import {ReactComponent as MoonIcon} from '../Icons/moon.svg';
-import './darkMode.css';
+import './darkmode.css';
 
 interface DarkModeProps {
     onToggle: (isDarkMode: boolean) => void;

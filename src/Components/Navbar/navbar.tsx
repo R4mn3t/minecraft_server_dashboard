@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './navbar.css'
 import {NavLink, Outlet, useLocation} from "react-router-dom";
-import DarkMode from "../UI/DarkMode/darkMode";
+import DarkMode from "../UI/Darkmode/darkmode";
 import LanguageSelector from "../UI/LanguageSelector/language-selector";
 
 interface NavBarProps {
