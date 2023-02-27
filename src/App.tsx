@@ -10,7 +10,7 @@ function App() {
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [isEnglish, setIsEnglish] = useState(true);
 
-    let userSettings = JSON.parse(localStorage.getItem('userSettings') || '{}');
+    let userSettings: UserSettings = JSON.parse(localStorage.getItem('userSettings') || '{}');
 
     const onLoad = () => {
         if (userSettings.darkModeEnabled) {
@@ -58,3 +58,8 @@ function App() {
 }
 
 export default App;
+
+export interface UserSettings {
+    darkModeEnabled: boolean;
+    language: string;
+}
