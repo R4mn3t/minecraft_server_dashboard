@@ -19,6 +19,8 @@ function App() {
 
         if (userSettings.language === 'de') {
             setIsEnglish(false);
+        } else {
+            setIsEnglish(true);
         }
     };
 
@@ -31,6 +33,7 @@ function App() {
     const onLanguageToggle = (isEnglish: boolean) => {
         setIsEnglish(isEnglish);
         userSettings = {...userSettings, language: isEnglish ? 'en' : 'de'};
+        console.log('App.tsx' + isEnglish);
         localStorage.setItem('userSettings', JSON.stringify(userSettings));
     };
 

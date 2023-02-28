@@ -23,5 +23,5 @@ export default function useTranslation() {
         return translations[key] || key;
     };
 
-    return {t, setLanguage};
+    return {t};
 };
