@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {ReactComponent as SunIcon} from '../Icons/sun.svg';
 import {ReactComponent as MoonIcon} from '../Icons/moon.svg';
 import './darkMode.css';
+import {cssDisplay} from "../css";
 
 interface DarkModeProps {
     onToggle: (isDarkMode: boolean) => void;
@@ -15,7 +16,6 @@ export default function DarkMode(props: DarkModeProps) {
         onToggle(!isDarkMode);
     }
 
-
     useEffect(() => {
         document.body.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
     }, [isDarkMode]);
@@ -26,7 +26,7 @@ export default function DarkMode(props: DarkModeProps) {
                 type={'checkbox'}
                 checked={isDarkMode}
                 onChange={handleToggle}
-                style={{display: 'none'}}/>
+                className={cssDisplay('none')}/>
             <span className={'slider round'}>
                 {isDarkMode ? <MoonIcon/> : <SunIcon/>}
             </span>

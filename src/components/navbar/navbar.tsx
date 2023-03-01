@@ -40,6 +40,7 @@ export default function Navbar(props: NavBarProps) {
 
     const handleLanguageToggle = (isEnglish: boolean) => {
         onLanguageToggle(isEnglish);
+        console.log('Navbar.tsx' + isEnglish);
     };
 
     return (
