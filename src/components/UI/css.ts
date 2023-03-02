@@ -88,12 +88,88 @@ export const cssBackgroundColor = memoize((color: CSSProperties['backgroundColor
 `);
 
 /***********************************************************************************************************************
- * Misc
+ * Position
  **********************************************************************************************************************/
 
-export const cssTop = ((value: number) => css`
-  top: ${value};
+export const cssPosition = memoize((position: CSSProperties['position']) => css`
+  position: ${position};
 `);
+
+/***********************************************************************************************************************
+ * Size
+ **********************************************************************************************************************/
+
+export const cssTop = ((top: Size) => css`
+  top: ${normalizeSize(top)};
+`);
+
+export const cssRight = ((right: Size) => css`
+  right: ${normalizeSize(right)};
+`);
+
+export const cssBottom = ((bottom: Size) => css`
+  bottom: ${normalizeSize(bottom)};
+`);
+
+export const cssLeft = ((left: Size) => css`
+  left: ${normalizeSize(left)};
+`);
+
+export const cssWidth = ((width: Size) => css`
+  width: ${normalizeSize(width)};
+`);
+
+export const cssHeight = ((height: Size) => css`
+  height: ${normalizeSize(height)};
+`);
+
+/***********************************************************************************************************************
+ * Spacing
+ **********************************************************************************************************************/
+
+export const cssMarginTop = ((margin: Size) => css`
+  margin-top: ${normalizeFactor(margin)};
+`);
+
+export const cssMarginRight = ((margin: Size) => css`
+  margin-right: ${normalizeFactor(margin)};
+`);
+
+export const cssMarginBottom = ((margin: Size) => css`
+  margin-bottom: ${normalizeFactor(margin)};
+`);
+
+export const cssMarginLeft = ((margin: Size) => css`
+  margin-left: ${normalizeFactor(margin)};
+`);
+
+export const cssMargin = ((margin: Size) => css`
+  margin: ${normalizeFactor(margin)};
+`);
+
+export const cssPaddingTop = ((padding: Size) => css`
+  padding-top: ${normalizeFactor(padding)}
+`);
+
+export const cssPaddingRight = ((padding: Size) => css`
+  padding-right: ${normalizeFactor(padding)};
+`);
+
+export const cssPaddingBottom = ((padding: Size) => css`
+  padding-bottom: ${normalizeFactor(padding)};
+`);
+
+export const cssPaddingLeft = ((padding: Size) => css`
+  padding-left: ${normalizeFactor(padding)};
+`);
+
+export const cssPadding = ((padding: Size) => css`
+  padding: ${normalizeFactor(padding)};
+`);
+
+/***********************************************************************************************************************
+ * Misc
+ **********************************************************************************************************************/
 
 export const cssZIndex = ((value: number) => css`
   z-index: ${value};
@@ -103,6 +179,14 @@ export const cssBoxShadow = memoize((shadow: CSSProperties['boxShadow']) => css`
   box-shadow: ${shadow};
 `);
 
+export const cssListStyle = memoize((style: CSSProperties['listStyle']) => css`
+  list-style: ${style};
+`);
+
+export const cssOverflow = ((overflow: CSSProperties['overflow']) => css`
+  overflow: ${overflow};
+`);
+
 /***********************************************************************************************************************
  * Functions
  **********************************************************************************************************************/
@@ -110,7 +194,7 @@ export const cssBoxShadow = memoize((shadow: CSSProperties['boxShadow']) => css`
 type Size = number | string;
 
 function normalizeSize(size: Size, unit = 'rem'): string {
-    return isString(size) ? size : size + unit;
+        return isString(size) ? size : size + unit;
 }
 
 function normalizeFactor(size: Size, factor: number = 0.25, unit = 'rem'): string {

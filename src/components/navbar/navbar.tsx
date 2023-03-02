@@ -3,6 +3,20 @@ import './navbar.css'
 import {NavLink, Outlet, useLocation} from "react-router-dom";
 import DarkMode from "../UI/DarkMode/darkMode";
 import LanguageSelector from "../UI/LanguageSelector/language-selector";
+import {cx} from "@emotion/css";
+import {
+    cssBackgroundColor,
+    cssBoxShadow,
+    cssDisplay,
+    cssHeight,
+    cssListStyle,
+    cssMargin,
+    cssOverflow,
+    cssPadding,
+    cssPosition,
+    cssTop,
+    cssZIndex
+} from "../UI/css";
 
 interface NavBarProps {
     onDarkModeToggle: (isDarkMode: boolean) => void;
@@ -45,8 +59,8 @@ export default function Navbar(props: NavBarProps) {
 
     return (
         <>
-            <nav>
-                <ul>
+            <nav className={nav}>
+                <ul className={ul}>
                     <li
                         id={'home'}
                         className={activeTab === 'home' ? 'active' : ''}
@@ -84,3 +98,21 @@ export default function Navbar(props: NavBarProps) {
         </>
     );
 }
+
+const nav = cx(
+    cssDisplay('flex'),
+    cssHeight(3),
+    cssBackgroundColor('#000000'),
+    cssPosition('sticky'),
+    cssTop(0),
+    cssZIndex(1),
+    cssBoxShadow('0px 0px 10px black'));
+
+const ul = cx(
+    cssDisplay('flex'),
+    cssListStyle('none'),
+    cssMargin(0),
+    cssPadding(0),
+    cssOverflow('hidden'),
+    cssBackgroundColor('#000000'),
+);

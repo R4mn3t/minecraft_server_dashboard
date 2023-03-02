@@ -1,18 +1,3 @@
-nav {
-    display: flex;
-    height: var(--navbar-height);
-    background-color: #000000;
-}
-
-ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #000000;
-}
-
 li {
     font-weight: bold;
     position: relative;
