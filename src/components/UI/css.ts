@@ -76,11 +76,23 @@ export const cssUnderline = css`
 `;
 
 /***********************************************************************************************************************
- * Color
+ * Text
  **********************************************************************************************************************/
 
 export const cssColor = memoize((color: CSSProperties['color']) => css`
   color: ${color};
+`);
+
+export const cssTextAlign = memoize((align: CSSProperties['textAlign']) => css`
+  text-align: ${align};
+`);
+
+export const cssTextDecoration = memoize((decoration: CSSProperties['textDecoration']) => css`
+  text-decoration: ${decoration};
+`);
+
+export const cssFontWeight = memoize((fontWeight: CSSProperties['fontWeight']) => css`
+  font-weight: ${fontWeight};
 `);
 
 export const cssBackgroundColor = memoize((color: CSSProperties['backgroundColor']) => css`
@@ -124,47 +136,69 @@ export const cssHeight = ((height: Size) => css`
 `);
 
 /***********************************************************************************************************************
- * Spacing
+ * Margin
  **********************************************************************************************************************/
 
-export const cssMarginTop = ((margin: Size) => css`
-  margin-top: ${normalizeFactor(margin)};
+export const cssMargin = ((factor: Size) => css`
+  margin: ${normalizeFactor(factor)};
 `);
 
-export const cssMarginRight = ((margin: Size) => css`
-  margin-right: ${normalizeFactor(margin)};
+export const cssMarginTop = ((factor: Size) => css`
+  margin-top: ${normalizeFactor(factor)};
 `);
 
-export const cssMarginBottom = ((margin: Size) => css`
-  margin-bottom: ${normalizeFactor(margin)};
+export const cssMarginRight = ((factor: Size) => css`
+  margin-right: ${normalizeFactor(factor)};
 `);
 
-export const cssMarginLeft = ((margin: Size) => css`
-  margin-left: ${normalizeFactor(margin)};
+export const cssMarginBottom = ((factor: Size) => css`
+  margin-bottom: ${normalizeFactor(factor)};
 `);
 
-export const cssMargin = ((margin: Size) => css`
-  margin: ${normalizeFactor(margin)};
+export const cssMarginLeft = ((factor: Size) => css`
+  margin-left: ${normalizeFactor(factor)};
 `);
 
-export const cssPaddingTop = ((padding: Size) => css`
-  padding-top: ${normalizeFactor(padding)}
+/***********************************************************************************************************************
+ * Padding
+ **********************************************************************************************************************/
+
+export const cssPadding = ((factor: Size) => css`
+  padding: ${normalizeFactor(factor)};
 `);
 
-export const cssPaddingRight = ((padding: Size) => css`
-  padding-right: ${normalizeFactor(padding)};
+export const cssPaddingTop = ((factor: Size) => css`
+  padding-top: ${normalizeFactor(factor)}
 `);
 
-export const cssPaddingBottom = ((padding: Size) => css`
-  padding-bottom: ${normalizeFactor(padding)};
+export const cssPaddingRight = ((factor: Size) => css`
+  padding-right: ${normalizeFactor(factor)};
 `);
 
-export const cssPaddingLeft = ((padding: Size) => css`
-  padding-left: ${normalizeFactor(padding)};
+export const cssPaddingBottom = ((factor: Size) => css`
+  padding-bottom: ${normalizeFactor(factor)};
 `);
 
-export const cssPadding = ((padding: Size) => css`
-  padding: ${normalizeFactor(padding)};
+export const cssPaddingLeft = ((factor: Size) => css`
+  padding-left: ${normalizeFactor(factor)};
+`);
+
+export const cssPaddingHor = ((factor: Size) => css`
+  padding-left: ${normalizeFactor(factor)};
+  padding-right: ${normalizeFactor(factor)};
+`);
+
+export const cssPaddingVer = ((factor: Size) => css`
+  padding-top: ${normalizeFactor(factor)};
+  padding-bottom: ${normalizeFactor(factor)};
+`);
+
+/***********************************************************************************************************************
+ * Translation
+ **********************************************************************************************************************/
+
+export const cssTranslateY = memoize((translate: CSSProperties['transform']) => css`
+  transform: ${translate};
 `);
 
 /***********************************************************************************************************************
@@ -183,8 +217,16 @@ export const cssListStyle = memoize((style: CSSProperties['listStyle']) => css`
   list-style: ${style};
 `);
 
-export const cssOverflow = ((overflow: CSSProperties['overflow']) => css`
+export const cssOverflow = memoize((overflow: CSSProperties['overflow']) => css`
   overflow: ${overflow};
+`);
+
+export const cssCursor = memoize((cursor: CSSProperties['cursor']) => css`
+  cursor: ${cursor};
+`);
+
+export const cssContent = memoize((content: CSSProperties['content']) => css`
+  content: ${content};
 `);
 
 /***********************************************************************************************************************
@@ -194,16 +236,16 @@ export const cssOverflow = ((overflow: CSSProperties['overflow']) => css`
 type Size = number | string;
 
 function normalizeSize(size: Size, unit = 'rem'): string {
-        return isString(size) ? size : size + unit;
+    return isString(size) ? size : size + unit;
 }
 
 function normalizeFactor(size: Size, factor: number = 0.25, unit = 'rem'): string {
     return isString(size) ? size : (size * factor) + unit;
 }
 
-/**
- *
- */
+/***********************************************************************************************************************
+ * Root
+ **********************************************************************************************************************/
 
 export const cssRootStyles = css`
   :root {
