@@ -118,29 +118,32 @@ const ulStyles = cx(
     cssOverflow('hidden'),
     cssBackgroundColor('#000000'));
 
-const liStyles = cx(
+const liStyles = cx( //TODO
     cssFontWeight('bold'),
     cssPosition('relative'),
     css('& > a', {
-        cssDisplay('block'),
-        cssColor('#d7d9d9'),
-        cssTextAlign('center'),
-        cssPadding('14px 16px'),
-        cssTextDecoration('none'),
-        cssCursor('pointer'),
+        cssDisplay: 'block',
+        cssColor: '#d7d9d9',
+        cssTextAlign: 'center',
+        cssPadding: '14px 16px',
+        cssTextDecoration: 'none',
+        cssCursor: 'pointer',
+        '&:hover:not(.active)': {
+            cssBackgroundColor: '#36454F',
+        },
     }),
-    css('& > a:hover:not(.active)'),
     css('&:not(:nth-last-child(1))::after', {
         cssContent: '""',
-        cssPosition('absolute'),
-        cssRight(0),
-        cssTop('50%'),
-        cssTranslateY: 'translateY(-50%)',
-        cssWidth('1px'),
-        cssHeight('80%'),
-        cssBackgroundColor('#AAAAAA'),
+        cssPosition: 'absolute',
+        cssRight: 0,
+        cssTop: '50%',
+        cssTransform: 'translateY(-50%)',
+        cssWidth: '1px',
+        cssHeight: '80%',
+        cssBackgroundColor: '#AAAAAA',
     }),
 );
+
 
 // const liStyles = css`
 //   font-weight: bold;
