@@ -99,6 +99,9 @@ export const cssBackgroundColor = memoize((color: CSSProperties['backgroundColor
   background-color: ${color};
 `);
 
+export const cssBold = cssFontWeight('bold');
+export const cssCenter = cssTextAlign('center');
+
 /***********************************************************************************************************************
  * Position
  **********************************************************************************************************************/
@@ -106,6 +109,9 @@ export const cssBackgroundColor = memoize((color: CSSProperties['backgroundColor
 export const cssPosition = memoize((position: CSSProperties['position']) => css`
   position: ${position};
 `);
+
+export const cssRelative = cssPosition('relative');
+export const cssAbsolut = cssPosition('absolute');
 
 /***********************************************************************************************************************
  * Size

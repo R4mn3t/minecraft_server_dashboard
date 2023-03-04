@@ -5,9 +5,10 @@ import DarkMode from "../UI/DarkMode/darkMode";
 import LanguageSelector from "../UI/LanguageSelector/language-selector";
 import {css, cx} from "@emotion/css";
 import {
-    cssBackgroundColor,
-    cssBoxShadow,
-    cssColor, cssCursor,
+    cssAbsolut,
+    cssBackgroundColor, cssBlock, cssBold,
+    cssBoxShadow, cssCenter,
+    cssColor, cssContent, cssCursor,
     cssDisplay,
     cssFontWeight,
     cssHeight,
@@ -15,7 +16,7 @@ import {
     cssMargin,
     cssOverflow,
     cssPadding,
-    cssPosition, cssTextAlign, cssTextDecoration,
+    cssPosition, cssRelative, cssRight, cssTextAlign, cssTextDecoration,
     cssTop, cssTranslateY, cssWidth,
     cssZIndex
 } from "../UI/css";
@@ -118,31 +119,32 @@ const ulStyles = cx(
     cssOverflow('hidden'),
     cssBackgroundColor('#000000'));
 
-const liStyles = cx( //TODO
-    cssFontWeight('bold'),
-    cssPosition('relative'),
-    css('& > a', {
-        cssDisplay: 'block',
-        cssColor: '#d7d9d9',
-        cssTextAlign: 'center',
-        cssPadding: '14px 16px',
-        cssTextDecoration: 'none',
-        cssCursor: 'pointer',
-        '&:hover:not(.active)': {
-            cssBackgroundColor: '#36454F',
-        },
-    }),
-    css('&:not(:nth-last-child(1))::after', {
-        cssContent: '""',
-        cssPosition: 'absolute',
-        cssRight: 0,
-        cssTop: '50%',
-        cssTransform: 'translateY(-50%)',
-        cssWidth: '1px',
-        cssHeight: '80%',
-        cssBackgroundColor: '#AAAAAA',
-    }),
-);
+const liStyles = css`
+  ${cssBold}
+  ${cssRelative}
+  & > a {
+    ${cssBlock}
+    ${cssColor('#d7d9d9')}
+    ${cssCenter}
+    ${cssPadding('14px 16px')}
+    ${cssTextDecoration('none')}
+    ${cssCursor('pointer')}
+    &:hover:not(.active) {
+      ${cssBackgroundColor('#36454F')}
+    }
+  }
+
+  &:not(:nth-last-child(1))::after {
+    ${cssContent('""')}
+    ${cssAbsolut}
+    ${cssRight(0)}
+    ${cssTop('50%')}
+    ${cssTranslateY('translateY(-50%)')}
+    ${cssWidth('1px')}
+    ${cssHeight('80%')}
+    ${cssBackgroundColor('#AAAAAA')}
+  }
+`;
 
 
 // const liStyles = css`
