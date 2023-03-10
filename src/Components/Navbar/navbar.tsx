@@ -29,15 +29,14 @@ import {
     cssWidth,
     cssZIndex
 } from "../UI/css";
+import {UserSettings} from "../../App";
 
 interface NavBarProps {
-    onDarkModeToggle: (isDarkMode: boolean) => void;
-    onLanguageToggle: (isEnglish: boolean) => void;
-    isDarkMode: boolean;
-    isEnglish: boolean;
+    userSettings: UserSettings;
 }
 
 export default function Navbar(props: NavBarProps) {
+    const {userSettings} = props;
     const [activeTab, setActiveTab] = useState('Home');
     const location = useLocation();
 
@@ -57,16 +56,6 @@ export default function Navbar(props: NavBarProps) {
         const currentTab = location.pathname.split('/')[1] || '';
         setActiveTab(currentTab);
     }, [location.pathname]);
-
-    const {onDarkModeToggle, onLanguageToggle, isDarkMode, isEnglish} = props;
-
-    const handleDarkModeToggle = (isDarkMode: boolean) => {
-        onDarkModeToggle(isDarkMode);
-    };
-
-    const handleLanguageToggle = (isEnglish: boolean) => {
-        onLanguageToggle(isEnglish);
-    };
 
     return (
         <>
@@ -93,14 +82,10 @@ export default function Navbar(props: NavBarProps) {
                 </ul>
                 <div className={'navContainer'}>
                     <div id={'darkMode'}>
-                        <DarkMode
-                            onToggle={handleDarkModeToggle}
-                            isDarkMode={isDarkMode}/>
+                        <DarkMode userSettings={userSettings}/>
                     </div>
                     <div id={'language'}>
-                        <LanguageSelector
-                            onToggle={handleLanguageToggle}
-                            isEnglish={isEnglish}/>
+                        <LanguageSelector userSettings={userSettings}/>
                     </div>
                 </div>
             </nav>

@@ -1,20 +1,28 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {ReactComponent as SunIcon} from '../Icons/sun.svg';
 import {ReactComponent as MoonIcon} from '../Icons/moon.svg';
 import './darkmode.css';
+import {UserSettings} from "../../../App";
 
 interface DarkModeProps {
-    onToggle: (isDarkMode: boolean) => void;
-    isDarkMode: boolean;
+    userSettings: UserSettings;
 }
 
 export default function DarkMode(props: DarkModeProps) {
-    const {onToggle, isDarkMode} = props;
+    let {userSettings} = props;
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
+    useEffect(() => {
+        if (userSettings.darkModeEnabled) {
+            setIsDarkMode(true);
+        }
+    }, []);
 
     const handleToggle = () => {
-        onToggle(!isDarkMode);
+        setIsDarkMode(!isDarkMode);
+        userSettings = {...userSettings, darkModeEnabled: !isDarkMode};
+        localStorage.setItem('userSettings', JSON.stringify(userSettings));
     }
-
 
     useEffect(() => {
         document.body.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
