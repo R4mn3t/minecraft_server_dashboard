@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import './navbar.css'
 import {NavLink, Outlet, useLocation} from "react-router-dom";
 import DarkMode from "../UI/Darkmode/darkmode";
@@ -29,14 +29,8 @@ import {
     cssWidth,
     cssZIndex
 } from "../UI/css";
-import {UserSettings} from "../../App";
 
-interface NavBarProps {
-    userSettings: UserSettings;
-}
-
-export default function Navbar(props: NavBarProps) {
-    const {userSettings} = props;
+export default function Navbar() {
     const [activeTab, setActiveTab] = useState('Home');
     const location = useLocation();
 
@@ -82,10 +76,10 @@ export default function Navbar(props: NavBarProps) {
                 </ul>
                 <div className={'navContainer'}>
                     <div id={'darkMode'}>
-                        <DarkMode userSettings={userSettings}/>
+                        <DarkMode/>
                     </div>
                     <div id={'language'}>
-                        <LanguageSelector userSettings={userSettings}/>
+                        <LanguageSelector/>
                     </div>
                 </div>
             </nav>
