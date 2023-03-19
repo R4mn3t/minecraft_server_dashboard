@@ -5,7 +5,6 @@ import './darkmode.css';
 import DarkModeSettings from "../../../Store/dark-mode-settings";
 
 export default function DarkMode() {
-    let darkModeSettings = useContext(DarkModeSettings);
     const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
     useEffect(() => {

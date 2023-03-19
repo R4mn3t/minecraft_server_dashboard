@@ -9,9 +9,9 @@ import DarkModeSettings from "./Store/dark-mode-settings";
 
 function App() {
     return (
-        <DarkModeSettings.Provider value={{
-            darkModeEnabled: false,
-        }}>
+        // <DarkModeSettings.Provider value={{
+        //     darkModeEnabled: false,
+        // }}>
             <BrowserRouter>
                 <Routes>
                     <Route
@@ -23,7 +23,7 @@ function App() {
                     </Route>
                 </Routes>
             </BrowserRouter>
-        </DarkModeSettings.Provider>
+        // </DarkModeSettings.Provider>
     );
 }
 
